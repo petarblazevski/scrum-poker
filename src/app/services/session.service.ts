@@ -12,20 +12,23 @@ export class SessionService {
 
   generateSessionId(): string {
     const id = shortid.generate();
-    this._sessionId = id;
     return id;
-  }
-
-  set setSessionType(type) {
-    this._sessionType = type;
   }
 
   get sessionType() {
     return this._sessionType;
   }
 
+  set setSessionType(type) {
+    this._sessionType = type;
+  }
+
   get sessionId() {
     return this._sessionId;
+  }
+
+  set setSessionId(id) {
+    this._sessionId = id;
   }
 
 }
