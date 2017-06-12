@@ -1,4 +1,23 @@
-.session-setup {
+.setup {
   padding: 30px 0;
-  background-color: #fbfbfb;
+}
+
+.setup__form {
+  margin-top: 30px;
+
+  border: 1px solid #fefefe;
+}
+
+.setup__id {
+  padding: 40px 0 30px;
+}
+
+.setup__input-id {
+  width: 50%;
+  margin: auto;
+  padding: 20px 0 50px;
+}
+
+.has-border-right {
+  border-right: 1px solid #ccc;
 }

@@ -1,27 +1,38 @@
-<section class="session-setup">
+<section class="setup">
   <div class="container">
-    <div class="level">
-      <div class="level-left">
-        <div class="field is-grouped">
-          <p class="control has-icons-left">
-            <input class="input" type="text" placeholder="Name" />
-            <span class="icon is-small is-left">
-              <i class="fa fa-user"></i>
-            </span>
-          </p>
-          <p class="control" *ngIf="type === 'join'">
-            <input class="input" type="text" placeholder="Session ID" />
-          </p>
-        </div>
+    <div class="field has-addons has-addons-centered">
+      <p class="control has-icons-left">
+        <input class="input" type="text" placeholder="Enter your name">
+        <span class="icon is-small is-left">
+          <i class="fa fa-user"></i>
+        </span>
+      </p>
+    </div>
+
+    <div class="setup__form columns">
+
+      <div class="column is-one-third is-offset-2 has-text-centered has-border-right">
+        <h3 class="subtitle">Create a new Session</h3>
+
+        <h1 class="title setup__id">QWD23SQ</h1>
+
+        <button (click)="onNewSession()" class="button is-primary">
+          <span>Start New Session</span>
+        </button>
       </div>
-      <div class="level-item" *ngIf="type === 'new'" >
-        <h1 class="title">{{ id }}</h1>
-      </div>
-      <div class="level-right">
-        <p class="control is-grouped-right">
-          <button class="button">Join</button>
+
+      <div class="column is-one-third has-text-centered">
+        <h3 class="subtitle">Join existing Session</h3>
+
+        <p class="control setup__input-id">
+          <input class="input" type="text" placeholder="Session ID">
         </p>
+
+        <button (click)="onJoinSession()" class="button is-primary">
+          <span>Join a Session</span>
+        </button>
       </div>
     </div>
+
   </div>
 </section>
