@@ -6,5 +6,6 @@
 export const environment = {
   production: false,
   default_session_type: 'new',
-  default_session_id: 'H16DD6IGZ'
+  default_session_id: 'H16DD6IGZ',
+  websocket_url: 'http://localhost:4222'
 };
