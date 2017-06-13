@@ -13,6 +13,7 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { SessionSetupComponent } from './session-setup/session-setup.component';
 
 import { SessionService } from './services/session.service';
+import { QuestionsService } from './services/questions.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { SessionService } from './services/session.service';
     RouterModule.forRoot(routes),
     ReactiveFormsModule
   ],
-  providers: [SessionService],
+  providers: [SessionService, QuestionsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

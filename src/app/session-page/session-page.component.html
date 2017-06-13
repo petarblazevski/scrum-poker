@@ -1,15 +1,21 @@
-<section>
-  <div class="container">
+<section class="hero is-light">
+  <div class="hero-body">
+    <div class="container">
 
-    <div class="field is-grouped">
-      <p class="control is-expanded">
-        <input class="input" type="text" placeholder="Message" [(ngModel)]="message">
-      </p>
-      <p class="control">
-        <button class="button is-info" (click)="sendMessage()">Send</button>
-      </p>
+      <div class="field has-addons">
+        <p class="control is-expanded">
+          <input class="input is-medium" type="text" placeholder="Question" [(ngModel)]="message">
+        </p>
+        <p class="control">
+          <button class="button is-medium" (click)="sendMessage()">
+            <span class="icon ">
+              <i class="fa fa-paper-plane-o"></i>
+            </span>
+          </button>
+        </p>
+      </div>
+
     </div>
-
   </div>
 </section>
 
