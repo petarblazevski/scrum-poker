@@ -27,7 +27,8 @@ export class SessionSetupComponent implements OnInit {
 
     // If the name is valid create new session
     if (this.session.get('name').valid) {
-      this.router.navigate(['session']);
+      this.service.setSessionId = this.newSessionId;
+      this.router.navigate(['session', this.service.sessionId]);
     }
 
     this.session.get('name').markAsTouched();
@@ -38,7 +39,8 @@ export class SessionSetupComponent implements OnInit {
 
     // If the form is valid join the session
     if ( this.session.valid) {
-      this.router.navigate(['session']);
+      this.service.setSessionId = this.session.get('sessionId').value;
+      this.router.navigate(['session', this.service.sessionId]);
     }
 
     // Loop over all controls, and set them to be touched

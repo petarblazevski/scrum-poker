@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import io from 'socket.io-client';
 
 import { environment } from '../../environments/environment';
 
@@ -18,19 +17,6 @@ export class LandingPageComponent implements OnInit {
     this.session = service;
   }
 
-  ngOnInit() {
-    console.log(io);
-    io(environment.websocket_url);
-  }
-
-  onJoinSession() {
-    this.session.setSessionType = 'join';
-    this.router.navigate(['session']);
-  }
-
-  onNewSession() {
-    this.session.setSessionType = 'new';
-    this.router.navigate(['session']);
-  }
+  ngOnInit() { }
 
 }

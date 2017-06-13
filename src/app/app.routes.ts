@@ -9,7 +9,7 @@ export const routes: Routes = [
     component: LandingPageComponent
   },
   {
-    path: 'session',
+    path: 'session/:id',
     component: SessionPageComponent
   }
 ];

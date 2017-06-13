@@ -6,7 +6,7 @@ import { environment } from '../../environments/environment';
 @Injectable()
 export class SessionService {
   private _sessionType = environment.default_session_type;
-  private _sessionId = environment.default_session_id;
+  private _sessionId;
 
   constructor() { }
 
