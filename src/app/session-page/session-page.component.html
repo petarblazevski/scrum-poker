@@ -4,7 +4,7 @@
 
       <div class="field has-addons">
         <p class="control is-expanded">
-          <input class="input is-medium" type="text" placeholder="Question" [(ngModel)]="message">
+          <input class="input is-medium" type="text" placeholder="Question" [(ngModel)]="message" (keypress)="handleKeyPress($event)">
         </p>
         <p class="control">
           <button class="button is-medium" (click)="sendMessage()">
@@ -16,6 +16,14 @@
       </div>
 
     </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <ul>
+      <li *ngFor="let question of questions | async"><h2 class="subtitle">{{question}}</h2></li>
+    </ul>
   </div>
 </section>
 

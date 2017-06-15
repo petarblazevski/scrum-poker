@@ -16,16 +16,13 @@ export class SessionPageComponent implements OnInit, OnDestroy {
   session: any;
   message: any;
   socket;
+  questions: any;
 
-  constructor(private service: SessionService, private route: ActivatedRoute, private questions: QuestionsService) {
+  constructor(private service: SessionService, private route: ActivatedRoute, private qs: QuestionsService) {
     this.session = service;
     this.socket = io.connect(environment.websocket_url);
 
     route.params.subscribe(params => service.setSessionId = params.id);
-
-    console.log(questions.getAllQuestions())
-
-    questions.getAllQuestions().subscribe(data => console.log('NEW DATA: ', data));
   }
 
   ngOnInit() {
@@ -36,10 +33,10 @@ export class SessionPageComponent implements OnInit, OnDestroy {
     });
 
     this.socket.on('message', function(data) {
-      self.questions.addQuestion(data);
+      self.qs.addQuestion(data);
     });
 
-
+    this.questions = this.qs.getAllQuestions();
   }
 
   ngOnDestroy() {
@@ -47,7 +44,15 @@ export class SessionPageComponent implements OnInit, OnDestroy {
   }
 
   sendMessage() {
+    this.qs.addQuestion(this.message);
     this.socket.emit('message', this.service.sessionId, this.message);
+    this.message = '';
+  }
+
+  handleKeyPress($event) {
+    if ($event.charCode === 13) {
+      this.sendMessage();
+    }
   }
 
 }
