@@ -21,9 +21,45 @@
 
 <section>
   <div class="container">
-    <ul>
-      <li *ngFor="let question of questions | async"><h2 class="subtitle">{{question}}</h2></li>
-    </ul>
+    <div class="columns">
+      <div class="column is-one-quarter">
+
+        <app-session-info [user]="user.name" [session]="session.sessionId"></app-session-info>
+
+      </div>
+      <div class="column">
+        <section class="questions">
+          <ul>
+            <li *ngFor="let question of questions | async" class="question">
+              <h2 class="title is-4 question__title">{{question}}</h2>
+
+              <nav class="level">
+                <div class="level-item has-text-centered">
+                  <div>
+                    <p class="heading">Sasko</p>
+                    <p class="title is-4">5</p>
+                  </div>
+                </div>
+                <div class="level-item has-text-centered">
+                  <div>
+                    <p class="heading">Viktor</p>
+                    <p class="title is-4">8</p>
+                  </div>
+                </div>
+                <div class="level-item has-text-centered">
+                  <div>
+                    <p class="heading">Dragan</p>
+                    <p class="title is-4">3</p>
+                  </div>
+                </div>
+              </nav>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </div>
   </div>
 </section>
+
+
 

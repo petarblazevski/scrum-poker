@@ -6,6 +6,7 @@ import { environment } from '../../environments/environment';
 
 import { SessionService } from '../services/session.service';
 import { QuestionsService } from '../services/questions.service';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-session-page',
@@ -17,10 +18,14 @@ export class SessionPageComponent implements OnInit, OnDestroy {
   message: any;
   socket;
   questions: any;
+  user: any;
 
-  constructor(private service: SessionService, private route: ActivatedRoute, private qs: QuestionsService) {
+  constructor(
+    private service: SessionService, private route: ActivatedRoute, private qs: QuestionsService, private userService: UserService
+  ) {
     this.session = service;
     this.socket = io.connect(environment.websocket_url);
+    this.user = userService;
 
     route.params.subscribe(params => service.setSessionId = params.id);
   }

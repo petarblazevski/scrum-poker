@@ -6,7 +6,14 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/pluck';
 import 'rxjs/add/operator/distinctUntilChanged';
 
-const state = [];
+const state = [
+  'Message content maintainable for SRS admin',
+  'Maintenance mode and information page',
+  'Enable sorting on column headings in Transaction list',
+  'Rewrite of old web Order pages',
+  'Rewrite of old web Pickup order pages',
+  'Location maintenance major changes',
+];
 
 @Injectable()
 export class QuestionsService {

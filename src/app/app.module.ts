@@ -11,9 +11,12 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { SessionPageComponent } from './session-page/session-page.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { SessionSetupComponent } from './session-setup/session-setup.component';
+import { SessionInfoComponent } from './session-info/session-info.component';
 
 import { SessionService } from './services/session.service';
 import { QuestionsService } from './services/questions.service';
+import { DeckService } from './services/deck.service';
+import { UserService } from './services/user.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,8 @@ import { QuestionsService } from './services/questions.service';
     NavigationComponent,
     SessionSetupComponent,
     LandingPageComponent,
-    SessionPageComponent
+    SessionPageComponent,
+    SessionInfoComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +34,7 @@ import { QuestionsService } from './services/questions.service';
     RouterModule.forRoot(routes),
     ReactiveFormsModule
   ],
-  providers: [SessionService, QuestionsService],
+  providers: [SessionService, QuestionsService, DeckService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
